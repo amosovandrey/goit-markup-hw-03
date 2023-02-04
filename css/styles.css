@@ -20,6 +20,24 @@
     
  */
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -29,7 +47,13 @@ body {
   color: var(--text-color);
   background-color: var(--title-white-color);
 }
-
+.container {
+  width: 100%;
+  max-width: 1152px;
+  padding: 0 15px;
+  margin: 0 auto;
+  outline: 2px solid rgb(255, 97, 6);
+}
 .link {
   text-decoration: none;
 }
@@ -54,10 +78,24 @@ body {
 /* ------------- INDEX.HTML ------------- */
 
 /* ------------- HEADER ------------- */
-
+.header {
+  border-bottom: 1px solid var(--accent-color);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+}
 /* ------------- NAV ------------- */
-
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
 .header-logo {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-right: 76px;
+
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -71,7 +109,21 @@ body {
 .logo-accent {
   color: var(--brand-color);
 }
+
+.header-list {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  /* gap: 40px; */
+}
+
+.header-list :not(:last-child) {
+  margin-right: 40px;
+}
+
 .header-list-link {
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-weight: 500;
 
   color: var(--dark-color);
@@ -84,15 +136,26 @@ body {
 }
 
 /* ------------- CONTACTS ------------- */
-
 .header-contacts {
+  display: flex;
+  align-items: center;
+  /* gap: 40px; */
+}
+
+.header-contacts :not(:last-child) {
+  margin-right: 40px;
+}
+
+.header-contacts-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-style: normal;
 
   color: inherit;
 }
 
-.header-contacts:hover,
-.header-contacts:focus {
+.header-contacts-item:hover,
+.header-contacts-item:focus {
   color: var(--active-color);
 }
 
@@ -101,7 +164,17 @@ body {
 .hero {
   background-color: var(--dark-color);
 }
+.hero-section {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
 .hero-title {
+  margin: 0 auto;
+  padding-top: 188px;
+  padding-bottom: 48px;
+  max-width: 494px;
+  text-align: center;
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
@@ -109,6 +182,9 @@ body {
   color: var(--title-white-color);
 }
 .hero-btn {
+  margin-bottom: 188px;
+  padding: 16px 32px;
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -118,7 +194,8 @@ body {
 
   color: var(--title-white-color);
   background-color: var(--brand-color);
-
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -131,7 +208,26 @@ body {
 /* .features {
   background-color: var(--section-background-color);
 } */
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.features-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.features-list > li {
+  max-width: 264px;
+}
+.features-list :not(:last-child) {
+  margin-right: 24px;
+}
+
 .list-title {
+  margin-bottom: 8px;
+
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -144,16 +240,56 @@ body {
   background-color: var(--section-background-color);
 } */
 .section-title {
+  display: block;
+  margin: 0 auto;
+  /* margin-top: 120px; */
+  margin-bottom: 72px;
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
+  text-transform: capitalize;
 
   color: var(--dark-color);
+}
+
+.description-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 24px; */
+}
+
+.description-list :not(:last-child) {
+  margin-right: 24px;
 }
 
 /* ------------- TEAM ------------- */
 .team {
   background-color: var(--light-color);
+}
+
+.team-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 24px; */
+}
+
+.team-list > li {
+  display: block;
+  text-align: center;
+  margin-right: 24px;
+}
+.team-list :last-child {
+  margin-right: 0;
+}
+.team-list-item > img {
+  margin-bottom: 32px;
+}
+
+.team-list-item > p {
+  margin-bottom: 32px;
 }
 /* ------------- FOOTER ------------- */
 
@@ -163,7 +299,14 @@ body {
 
 /* ------------- LOGO FOOTER ------------- */
 
+.footer > div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 .footer-logo {
+  margin-bottom: 16px;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -179,6 +322,7 @@ body {
 }
 
 .footer-text {
+  max-width: 264px;
   color: var(--accent-color);
 }
 
